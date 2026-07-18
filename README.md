@@ -8,18 +8,18 @@ A comprehensive JavaScript application built to practice **JS Programming Constr
 
 ```
 c:/Coding/Frontend/
-├── index.html                 # Interactive Glassmorphic Web Dashboard
-├── package.json               # Project manifest & npm scripts
-├── .gitignore                 # Files ignored by Git tracking
-├── README.md                  # Project documentation & run guide
+├── index.html                
+├── package.json             
+├── .gitignore                 
+├── README.md                  
 ├── css/
-│   └── style.css              # Custom CSS styling (Tokens, dark theme, animations)
+│   └── style.css              
 └── src/
     ├── models/
-    │   ├── EmployeePayroll.js # ES6/ES9 Class for Employee Payroll with RegEx validation
-    │   └── WageCalculator.js  # Core wage logic, simulation engine & switch constructs (UC1-UC10)
+    │   ├── EmployeePayroll.js 
+    │   └── WageCalculator.js  
     ├── utils/
-    │   └── arrayHelpers.js    # Specialized array operations (map, filter, reduce, forEach, find)
-    ├── index.js               # Node.js CLI script for terminal testing
-    └── app.js                 # Web dashboard interaction controller
+    │   └── arrayHelpers.js    
+    ├── index.js               
+    └── app.js                 
 ```
