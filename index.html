@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Wage Computation</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+    <!-- Header -->
+    <header class="header">
+        <div>
+            <h1>Employee Wage Computation System</h1>
+            <p class="subtitle">JS Programming Constructs | Array Methods | RegEx Validation | Git Practice</p>
+        </div>
+        <button id="themeToggleBtn" class="theme-toggle-btn">🌙 Dark Mode</button>
+    </header>
+
+    <!-- Top Action Grid: Simulation Config & Employee Reg Side-by-Side -->
+    <div class="top-grid">
+        <!-- Card 1: Simulation Settings -->
+        <div class="card">
+            <h2 class="card-title">⚙️ Simulation Settings</h2>
+            <form id="configForm" class="form-row-grid">
+                <div class="form-group">
+                    <label for="wagePerHour">Wage / Hour ($)</label>
+                    <input type="number" id="wagePerHour" class="form-control" value="20" min="1">
+                </div>
+                <div class="form-group">
+                    <label for="maxDays">Max Working Days</label>
+                    <input type="number" id="maxDays" class="form-control" value="20" min="1" max="31">
+                </div>
+                <div class="form-group">
+                    <label for="maxHours">Max Working Hours</label>
+                    <input type="number" id="maxHours" class="form-control" value="160" min="1" max="300">
+                </div>
+                <div class="form-group form-btn-group">
+                    <button type="button" id="btnRunSimulation" class="btn">Run Simulation</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Card 2: Add Employee (RegEx Validation) -->
+        <div class="card">
+            <h2 class="card-title">👤 Register Employee (Regex Validated)</h2>
+            <form id="employeeForm">
+                <div class="form-compact-grid">
+                    <div class="form-group">
+                        <label for="empId">ID</label>
+                        <input type="text" id="empId" class="form-control" placeholder="e.g. 101" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="empName">Full Name</label>
+                        <input type="text" id="empName" class="form-control" placeholder="e.g. Terence" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="empSalary">Salary ($)</label>
+                        <input type="number" id="empSalary" class="form-control" placeholder="e.g. 4500" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="empGender">Gender</label>
+                        <select id="empGender" class="form-control">
+                            <option value="M">Male (M)</option>
+                            <option value="F">Female (F)</option>
+                        </select>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="empStartDate">Start Date</label>
+                        <input type="date" id="empStartDate" class="form-control" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-secondary">Add Employee</button>
+                <div id="formAlert" class="alert"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main Results Section -->
+    <div class="card main-results-card">
+        <h2 class="card-title">📊 Monthly Wage Results & Breakdown</h2>
+
+        <!-- KPI Summary Cards -->
+        <div class="kpi-grid">
+            <div class="kpi-box">
+                <div class="kpi-label">Total Computed Wage</div>
+                <div class="kpi-value" id="kpiTotalWage">$0</div>
+            </div>
+            <div class="kpi-box">
+                <div class="kpi-label">Total Hours Worked</div>
+                <div class="kpi-value" id="kpiTotalHours">0 hrs</div>
+            </div>
+            <div class="kpi-box">
+                <div class="kpi-label">Days Accumulated</div>
+                <div class="kpi-value" id="kpiTotalDays">0 / 20</div>
+            </div>
+            <div class="kpi-box">
+                <div class="kpi-label">Full-Time Days</div>
+                <div class="kpi-value" id="kpiFullTimeDays">0</div>
+            </div>
+        </div>
+
+        <!-- Filter Buttons Bar -->
+        <div class="filter-bar">
+            <span class="filter-label">Filter Records:</span>
+            <button class="filter-btn active" data-filter="all">All Days</button>
+            <button class="filter-btn" data-filter="fulltime">Full Time (8 hrs)</button>
+            <button class="filter-btn" data-filter="parttime">Part Time (4 hrs)</button>
+            <button class="filter-btn" data-filter="worked">Days Worked (> 0 hrs)</button>
+        </div>
+
+        <!-- Table Container -->
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Day #</th>
+                        <th>Work Hours</th>
+                        <th>Attendance Status</th>
+                        <th>Daily Wage ($)</th>
+                        <th>Cumulative Hours</th>
+                    </tr>
+                </thead>
+                <tbody id="recordsTableBody">
+                    <!-- JS Populated -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script type="module" src="src/app.js"></script>
+</body>
+</html>

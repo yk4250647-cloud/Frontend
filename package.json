@@ -1,0 +1,20 @@
+{
+  "name": "employee-wage-computation",
+  "version": "1.0.0",
+  "description": "Employee Wage Computation system demonstrating JS constructs, ES9+ features, array helper methods, and Git practice.",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "node src/index.js"
+  },
+  "keywords": [
+    "javascript",
+    "es9",
+    "array-methods",
+    "employee-wage",
+    "git"
+  ],
+  "author": "",
+  "license": "ISC"
+}
